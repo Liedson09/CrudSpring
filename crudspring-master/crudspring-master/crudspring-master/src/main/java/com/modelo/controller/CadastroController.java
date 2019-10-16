@@ -7,6 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.modelo.model.Produto;
 
@@ -18,16 +21,6 @@ public class CadastroController {
 	
 	@GetMapping("/")
 	public String home(Model model) {
-		model.addAttribute("produto", crudRepository.findAll());
-		return "cadastro";
-	}
-	@GetMapping("/formLivro")
-	public String lista(Model model) {
-		model.addAttribute("produto", crudRepository.findAll());
-		return "formLivro";
-	}
-	@GetMapping("/cadastrar")
-	public String cadastro(Model model) {
 		model.addAttribute("produto", crudRepository.findAll());
 		return "cadastro";
 	}
@@ -46,4 +39,20 @@ public class CadastroController {
 		
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*
+	@GetMapping("/delete/{id}")
+	public String delete(@PathVariable("id") Long id) {
+		System.out.print("ID" + id);
+		return "/cadastro";	
+	}*/
+
 }
