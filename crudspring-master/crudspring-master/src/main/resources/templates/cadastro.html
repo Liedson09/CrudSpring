@@ -4,111 +4,27 @@
     <meta charset="utf-8">
     <title>Cadastro</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-	<style type="text/css">
-		*{
-			margin: 0;
-			padding: 0;
-		}
-		form {
-							  border: 3px solid black;
-							  color: black;
-							  font-size: 18px;
-							  background-color: white;
-							  border: 3px solid green;
-							  -moz-border-radius: 5px;
-							  -webkit-border-radius: 5px;
-							  border-radius: 5px;
-							  height: 600px;
-							  margin-bottom: 20px;
-							  border-bottom: 3px solid green;
-							  border-left: 3px solid green;
-							  margin-top: 50px;
-							  margin-left: 40%;
-							  margin-right: 40%;
-							  text-align: center;
-
-							 
-			}
-			h1 {
-				background: green;
-				margin-top: 0px;
-				height: 120px;
-				width: 100%;
-				text-align: center;
-				padding-top: 2%;
-				
-
-			}
-			b {
-			border-radius:5px;
-			color: green;	
-
-			}
-			input {
-				border-radius:5px;
-				margin-right: -200%;
-			}
-		.div_mae{
-			position: absolute;
-			width: 100%;
-			height: 500px;
-			background: green
-		}
-		#butao{
-					margin-top: -85px;
-					margin-left: 53%;
-					height:20px;
-			}
-		#foto img{
-			margin-top: -10%;
-			margin-left: -200%;
-		    border-radius: 50%;
-		   
-			}
-			#buton{
-				margin-top: -4px;
-					margin-right: 65%;
-					height:20px;
-			}
-			
-	</style>
   </head>
   <body>
-  <div class="div_mae">
-  <div class="divs">
-  	<h1 class="cadastro">Cadastro de Livros</h1>
-  </div>
-  <form class="" action="/cadastro" method="post" align="cenetr">
-    <div class="form"> <br>
-		<div>
-        <b><label for="">Nome:</label>
-    <input type="text" name="descricao" value="" class="form-control" placeholder="Nome do Livro"></b>
-    </div> <br><br>
-    <div>
-        <b><label>Horario</label>
-	<input type="text" value="" name="horario" class="form-control time-mask" placeholder=" 00:00:00"></b>
-    </div><br><br>
-    <div>
-        <b><label>Emprestimo</label>
-	<input type="date" value="" name="emprestimo" class="form-control" placeholder=" dd/mm/aaaa" data-mask="00/00/0000" maxlength="8" autocomplete="off"></b>
-    </div><br><br>
-     <div>
-        <b><label>Devolução</label>
-	<input type="date" value="" name="devolucao" class="form-control" placeholder=" dd/mm/aaaa" data-mask="00/00/0000" maxlength="8" autocomplete="off"></b>
-    
-    </div>
-	</div> <br><br>
-	<div id="buton">
-		<div id="buton"><input type="submit" value="Cadastrar" class="btn btn-outline-success" align="center"></div>
-	</div>
-	
-	
-
-	
-	
-	</form>
-  <div id="butao"><a href="/formLivro"><button type="button" class="btn btn-outline-success" align="right"> Listar Livros </button></a></div>
-  </div>
+  <form class="" action="/cadastro" method="post">
+    <label for="">Nome:</label>
+    <input type="text" name="descricao" value="">
+    <input type="submit" value="Salvar">
+  </form>
+  
+  <table border="1px">  
+  	<tr>
+  		<th>Código</th>
+  		<th>Descrição</th>
+  		<th>Excluir</th> 
+  		<th>Editar</th> 		
+  	</tr>
+  	<tr th:each="p : ${produto}">
+  		<td th:text=${p.id}>1</td>
+  		<td th:text="${p.descricao}">Arroz</td>  	
+  		<td><a class="btn btn-outline-danger" th:href="@{/delete/{id}(id=${p.id})}">Excluir</a></td>	
+  		<td><a th:href="@{/editar/{id}(id=${p.id})}">Editar</a></td>
+  	</tr>
+  </table>
   </body>
 </html>
