@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+
+			<head>
+				<title>Adicionar</title>
+
+				
+				<meta charset="utf-8">
+
+				<style type="text/css">
+					
+
+								form {
+							  border: 3px solid black;
+							  color: black;
+							  font-size: 18px;
+							  background-color: white;
+							  border: 3px solid green;
+							  -moz-border-radius: 5px;
+							  -webkit-border-radius: 5px;
+							  border-radius: 5px;
+							  height: 390px;
+							  margin-bottom: 20px;
+							  border-bottom: 3px solid green;
+							  border-left: 3px solid green;
+							  margin-top: 10px;
+							  margin-left: 40%;
+							  margin-right: 40%;
+
+							 }
+
+							 #controller{
+									position: relative;
+									background: green;
+									height: 120px;
+									width: 100%;
+									margin-top: -30px;
+									margin-left: -40px;
+									margin: 0;
+									margin-top: 10px;
+
+
+								}
+
+							a:link{
+					
+										text-decoration:none;
+
+								  }
+
+							a:visited {
+										text-decoration:none;
+
+									  }
+									  .menu{
+list-style:none; 
+border:1px solid #c0c0c0; 
+float:left; 
+}
+.menu li{
+position:relative; 
+float:left; 
+border-right:1px solid #c0c0c0; 
+}
+.menu li a{color:#333; text-decoration:none; padding:5px 10px; display:block;}
+ 
+.menu li a:hover{
+background:#333; 
+color:#fff; 
+-moz-box-shadow:0 3px 10px 0 #CCC; 
+-webkit-box-shadow:0 3px 10px 0 #ccc; 
+text-shadow:0px 0px 5px #fff; 
+}
+.menu li  ul{
+position:absolute; 
+top:25px; 
+left:0;
+background-color:#fff; 
+display:none;
+}
+.menu li:hover ul, .menu li.over ul{display:block;}
+.menu li ul li{
+border:1px solid #c0c0c0; 
+display:block; 
+width:150px;
+}
+li{display:inline}
+a:link{text-decoration:none;
+ color:black; 
+ background:; 
+ padding:10px;
+ text-align: center;}
+a:hover{background: white;}
+a:visited{color:black;}	
+
+				</style>
+
+				
+             <!-- Bootstrap links CDN-->
+		     <link rel= "stylesheet" href= "https://maxcdn.Bootstrapcdn.com/Bootstrap/3.3.2/css/Bootstrap.min.css" > 
+		     <link rel= "stylesheet" href= "https://maxcdn.Bootstrapcdn.com/Bootstrap/3.3.2/css/Bootstrap-theme.min.css" >
+
+			</head>
+
+
+<body>
+<div class="modal fade" tabindex="-1" role="dialog" id="modal">
+<div class="menu">
+	<ul>
+		<li><a href="/index">Home</a></li>
+		<li><a href="#">Cadastro</a>
+			<ul>
+                      <li><a href="/cadastrar">Livro</a></li>                    
+                </ul>
+		</li>
+		<li><a href="/cadastrarAluno">Emprestimo</a></li>
+	</ul>
+	</div>
+	<form class="" action="/cadAluno" method="post" align="center" th:object="${aluno}">
+
+		<div class="form"> <br>
+		<div>
+        <b><label for="">Nome:</label>
+    <input type="text" name="nome" value="" class="form-control" placeholder="Nome do Livro"></b>
+    </div> <br><br>
+    <div>
+    <b><label for="">Turma:</label>
+    <select name="select">
+    <option value="valor1">Turma</option> 
+  <option value="valor1">1° ADMINISTRAÇÃO</option> 
+  <option value="valor2">1° AAGROPECUARIA</option> 
+  <option value="valor3">1° FINANÇAS</option>
+  <option value="valor4">1° INFORMÁTICA</option>
+  <option value="valor1">2° ADMINISTRAÇÃO</option> 
+  <option value="valor2">2° AGROPECUARIA</option> 
+  <option value="valor3">2° FINANÇAS</option>
+  <option value="valor4">2° INFORMÁTICA</option>
+  <option value="valor1">3° ADMINISTRAÇÃO</option> 
+  <option value="valor2">3° AAGROPECUARIA</option> 
+  <option value="valor3">3° FINANÇAS</option>
+  <option value="valor4">3° INFORMÁTICA</option>
+</select></b>
+    </div> <br><br>
+    <div>
+    <b><label for="">Livro:</label>
+    <input type="text" name="turma" value="" class="form-control" placeholder="Nome da Turma"></b>
+    </div> <br><br>
+    <div>
+    <b><label for="">Emprestimo:</label>
+    <input type="text" name="turma" value="" class="form-control" placeholder="Nome da Turma"></b>
+    </div> <br><br>
+    <div>
+    <b><label for="">Devolução:</label>
+    <input type="text" name="turma" value="" class="form-control" placeholder="Nome da Turma"></b>
+    </div> <br><br>
+    
+	<div id="buton">
+		<div id="buton"><input type="submit" value="Cadastrar" class="btn btn-outline-success" align="center"></div>
+	</div>
+		<br>
+		<a href="/listAluno">Listar ALunos</a>
+
+	
+	
+	</form>
+</div>
+</body>
+
+</html>
