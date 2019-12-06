@@ -3,6 +3,9 @@ package com.modelo.model;
 
 import java.util.Date;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,13 +18,14 @@ public class Livro {
 	
 	
 	private int ano;
+	private String data;
 	
 	
 	
 	
 	
-	public int getData() {
-		return ano;
+	public String getData() {
+		return this.data;
 	}
 
 	public void setData(Date data) {
@@ -48,12 +52,7 @@ public class Livro {
 	private String descricao;
 	@NotNull(message="descrição é Obrigatorio")
 	 @Column
-	private String emprestimo;
-	@NotNull(message="Data é Obrigatorio")
-	 @Column
-	private String devolucao;
-	@NotNull(message="Data é Obrigatorio")
-	 @Column
+	
 	
 	private String autor;
 	
@@ -81,24 +80,13 @@ public class Livro {
 		this.descricao = descricao;
 	}
 	
-	public String getEmprestimo() {
-		return emprestimo;
-	}
-
-	public void setEmprestimo(String emprestimo) {
-		this.emprestimo = emprestimo;
-	}
-
-	
-
-	public String getDevolucao() {
-		return devolucao;
-	}
-
-	public void setDevolucao(String devolucao) {
-		this.devolucao = devolucao;
+	public Livro() {
+		this.data = "27/11/2019";
 	}
 	
 	
-
+	
+	
+	
+	
 }

@@ -159,8 +159,7 @@ a:visited{color:black;}
   		<td><a th:href="@{listAluno}"><span th:text="${p.descricao}"></span></a></td>
   		<td th:text="${p.autor}"></td>
   		<td th:text="${p.editora}"></td>
-  		<td th:text="${p.emprestimo}"></td>
-  		<td th:text="${p.devolucao}"></td>	
+  			
   		<td>
 	<a class="btn btn-primary" th:href="@{/editar/{id}(id=${p.id})}" >Editar</a>
 	</td>

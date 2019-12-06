@@ -38,7 +38,11 @@ public class CadastroController {
 		model.addAttribute("produto", crudRepository.findAll());
 		return "index";
 	}
-
+	@GetMapping("/login")
+	public String login(Model model) {
+		model.addAttribute("produto", crudRepository.findAll());
+		return "login";
+	}
 
 			
 	@GetMapping("/editar")
@@ -56,12 +60,6 @@ public class CadastroController {
 	@PostMapping("/cadastro")
 	public String salvar(@Valid Livro livro, BindingResult result
 			,RedirectAttributes attributes) {
-		
-		Date dt = new Date();
-		
-		livro.setData(dt);
-		
-		System.out.println(livro.getData());
 		
 		if(result.hasErrors()){
 			
