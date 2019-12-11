@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Editar Aluno</title>
+</head>
+<body>
+	<h1>Editar Nomes de Alunos</h1>
+	<form th:object ="${dado}" method="POST" action="/cadAluno" align="cenetr">
+    <div class="form"> <br>
+    
+    
+    
+    <div>
+        <b><label for="">Codigo:</label>
+    <input type="text" th:field="*{id}" readonly="readonly" class="form-control" placeholder="Nome do Livro"></b>
+    </div> <br><br>
+    <div>
+    
+    
+		<div>
+        <b><label for="">Nome:</label>
+    <input type="text" th:field="*{nome}" class="form-control" placeholder="Nome do Livro"></b>
+    </div> <br><br>
+    <div>
+        <b><label>Sala</label>
+	<input type="text" th:field="*{sala}" class="form-control time-mask" placeholder=" Turma do Aluno"></b>
+    </div><br><br>
+    
+	<div id="buton">
+		<div id="buton"><input type="submit" value="Editar" class="btn btn-outline-success" align="center"></div>
+	</div>
+	</form>
+</body>
+</html>
