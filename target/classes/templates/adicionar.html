@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+
+			<head>
+				<title>Adicionar</title>
+				
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="EP.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+				
+				<meta charset="utf-8">
+
+				<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		form {
+							  border: 3px solid black;
+							  color: black;
+							  font-size: 18px;
+							  background-color: white;
+							  border: 3px solid green;
+							  -moz-border-radius: 5px;
+							  -webkit-border-radius: 5px;
+							  border-radius: 5px;
+							  height: 500px;
+							  margin-bottom: 20px;
+							  border-bottom: 3px solid green;
+							  border-left: 3px solid green;
+							  margin-top: 50px;
+							  margin-left: 40%;
+							  margin-right: 40%;
+							  text-align: center;
+
+							 
+			}
+			h1 {
+			background: -webkit-linear-gradient(left,#00FF7F,#3CB371,#2E8B57);
+			color: white;
+				margin-top: 0px;
+				height: 120px;
+				width: 100%;
+				text-align: center;
+				padding-top: 2%;
+				
+
+			}
+			b {
+			border-radius:0px;
+			color: green;	
+
+			}
+			input {
+				border-radius:0px;
+				margin-top: 5%;
+				
+			}
+		.div_mae{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: -webkit-linear-gradient(left,#00FF7F,#3CB371,#2E8B57);
+			
+		}
+		#butao{
+					margin-top: -20px;
+					margin-left: 53%;
+					height:20px;
+			}
+		#foto img{
+			margin-top: -10%;
+			margin-left: -200%;
+		    border-radius: 50%;
+		   
+			}
+			#buton{
+				margin-top: -2px;
+					margin-right: -13%;
+					height:50px;
+			}
+			.menu{
+list-style:none; 
+border:1px solid #c0c0c0; 
+float:left; 
+}
+.menu li{
+position:relative; 
+float:left; 
+border-right:1px solid #c0c0c0; 
+}
+.menu li a{color:#333; text-decoration:none; padding:5px 10px; display:block;}
+ 
+.menu li a:hover{
+background:#333; 
+color:#fff; 
+-moz-box-shadow:0 3px 10px 0 #CCC; 
+-webkit-box-shadow:0 3px 10px 0 #ccc; 
+text-shadow:0px 0px 5px #fff; 
+}
+.menu li  ul{
+position:absolute; 
+top:25px; 
+left:0;
+background-color:#fff; 
+display:none;
+}
+.menu li:hover ul, .menu li.over ul{display:block;}
+.menu li ul li{
+border:1px solid #c0c0c0; 
+display:block; 
+width:150px;
+}
+li{display:inline}
+a:link{text-decoration:none;
+ color:black; 
+ background:; 
+ padding:10px;
+ text-align: center;}
+a:hover{background: white;}
+a:visited{color:black;}	
+			
+
+				
+
+
+	</style>
+
+			</head>
+
+
+<body>
+<div class="div_mae">
+
+<div class="modal fade" tabindex="-1" role="dialog" id="modal">
+<div class="menu">
+	<ul>
+		<li><a href="/index">Home</a></li>
+		<li><a href="#">Cadastro</a>
+			<ul>
+                      <li><a href="/cadastrar">Livro</a></li>                    
+                </ul>
+		</li>
+		<li><a href="/cadastrarAluno">Emprestimo</a></li>
+	</ul>
+	</div>
+	<form class="" action="/cadAluno" method="get" align="center" th:object="${aluno}">
+
+		<div class="form"> <br>
+		<div>
+        <b><label for="">Nome:</label>
+    <input type="text" name="nome" value="" class="form-control" placeholder="Nome do Livro"></b>
+    </div> <br><br>
+    <div>
+    <b><label for="">Turma:</label>
+    <select name="select">
+    <option value="valor1">Turma</option> 
+  <option value="valor1">1° ADMINISTRAÇÃO</option> 
+  <option value="valor2">1° AAGROPECUARIA</option> 
+  <option value="valor3">1° FINANÇAS</option>
+  <option value="valor4">1° INFORMÁTICA</option>
+  <option value="valor1">2° ADMINISTRAÇÃO</option> 
+  <option value="valor2">2° AGROPECUARIA</option> 
+  <option value="valor3">2° FINANÇAS</option>
+  <option value="valor4">2° INFORMÁTICA</option>
+  <option value="valor1">3° ADMINISTRAÇÃO</option> 
+  <option value="valor2">3° AAGROPECUARIA</option> 
+  <option value="valor3">3° FINANÇAS</option>
+  <option value="valor4">3° INFORMÁTICA</option>
+</select></b>
+    </div> <br><br>
+    <div>
+    <b><label for="">Livro:</label>
+    <input type="text" name="turma" value="" class="form-control" placeholder="Nome da Turma"></b>
+    </div> <br><br>
+    <div>
+    <b><label for="">Emprestimo:</label>
+    <input type="text" name="turma" value="" class="form-control" placeholder="Nome da Turma"></b>
+    </div> <br><br>
+    <div>
+    <b><label for="">Devolução:</label>
+    <input type="text" name="turma" value="" class="form-control" placeholder="Nome da Turma"></b>
+    </div> <br><br>
+    
+	<div id="buton">
+		<div id="buton"><input type="submit" value="Cadastrar" class="btn btn-outline-success" align="center"></div>
+	</div>
+		<br>
+		<a href="/listAluno">Listar ALunos</a>
+
+	
+	
+	</form>
+</div>
+</div>
+</body>
+
+</html>

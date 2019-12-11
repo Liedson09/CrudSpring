@@ -1,0 +1,163 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+		<head>
+			<title>Alunos Cadastrados</title>
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+			
+
+				<meta charset="utf-8">
+				<style type="text/css">
+
+					#controller{
+								position: relative;
+								background: green;
+								height: 120px;
+								width: 100%;
+								margin-top: -35px;
+								margin-left: -40px;
+								margin: 0;
+								
+
+
+							}
+
+
+							.c{
+								text-align: right;
+								margin-top: -2%;
+								margin-right: 100px; 
+								top: -5%;
+								padding:0%;
+								
+							  }
+
+							.d{
+								text-align: right;
+								margin-top: -42px;
+								margin-right: 210px; 
+								top: -5%;
+								padding:0%;
+							}  
+
+							  a:link{
+					
+									text-decoration:none;
+									}
+							  a:visited {
+									text-decoration:none;
+									}
+
+							.foto img{
+										margin-top: -8%;
+										margin-left: 30%;
+									    border-radius: 10%;
+									
+									}		
+							.menu{
+list-style:none; 
+border:1px solid #c0c0c0; 
+float:left; 
+}
+.menu li{
+position:relative; 
+float:left; 
+border-right:1px solid #c0c0c0; 
+}
+.menu li a{color:#333; text-decoration:none; padding:5px 10px; display:block;}
+ 
+.menu li a:hover{
+background:#333; 
+color:#fff; 
+-moz-box-shadow:0 3px 10px 0 #CCC; 
+-webkit-box-shadow:0 3px 10px 0 #ccc; 
+text-shadow:0px 0px 5px #fff; 
+}
+.menu li  ul{
+position:absolute; 
+top:25px; 
+left:0;
+background-color:#fff; 
+display:none;
+}
+.menu li:hover ul, .menu li.over ul{display:block;}
+.menu li ul li{
+border:1px solid #c0c0c0; 
+display:block; 
+width:150px;
+}
+li{display:inline}
+a:link{text-decoration:none;
+ color:black; 
+ background:; 
+ padding:10px;
+ text-align: center;}
+a:hover{background: white;}
+a:visited{color:black;}	
+							
+
+							
+
+				</style>
+
+		</head>
+
+<body>
+
+		<div id="controller"><h1 align="center">Alunos Cadastrados</h1><h2 class="c"><a href="/formLivro"><button type="button" class="btn btn-outline-light"> Volta </button></a></h2>
+		<div class="menu">
+	<ul>
+		<li><a href="/index">Home</a></li>
+		<li><a href="#">Cadastro</a>
+			<ul>
+                      <li><a href="/cadastrar">Livro</a></li>                    
+                </ul>
+		</li>
+		<li><a href="/cadastrarAluno">Emprestimo</a></li>
+	</ul>
+	</div>
+		 
+			<div><h3 class="d"><a href="/cadastrarAluno"><button type="button" class="btn btn-outline-light"> CADASTRAR ALUNOS </button></a></h3></div> 
+			<div class="foto"> <img src="c1.png" width="4%" height="4%"> </div> 
+		</div>
+
+		
+
+
+		
+	<table border="1px" align="center" width="50%">
+
+		<tr>	
+				<th align="center"><b>CÓDIGO:</b></th>
+				
+				<th align="center"><b>NOME DO ALUNO:</b></th>
+						
+				<th align="center"><b>TURMA:</b></th>
+				
+				<th align="center"><b>LIVRO:</b></th>
+				
+				<th align="center"><b>EMPRESTIMO:</b></th>
+				
+				<th align="center"><b>DEVOLUÇÃO:</b></th>
+					
+				<th align="center"><b>EDITAR:</b></th>
+				
+				<th align="center"><b>EXCLUIR:</b></th>
+						
+			</tr>
+  	<tr th:each="a : ${aluno}">
+  		<td th:text=${a.id}>1</td>
+  		<td th:text="${a.nome}"></td>
+  		<td th:text="${a.sala}"></td>
+  		<td th:text="${a.livro}"></td>
+  		<td th:text="${a.emprestimo}"></td>
+  		<td th:text="${a.devolucao}"></td>
+  		<td>
+	<a class="btn btn-primary" th:href="@{/edit/{id}(id=${a.id})}" >Editar</a>
+	</td>
+  		<td><a class="btn btn-outline-danger" th:href="@{/del/{id}(id=${a.id})}">Excluir</a></td>	
+  	</tr>
+	</table>
+
+</body>
+
+</html>
