@@ -18,14 +18,13 @@ public class Livro {
 	
 	
 	private int ano;
-	private String data;
 	
 	
 	
 	
 	
-	public String getData() {
-		return this.data;
+	public int getData() {
+		return ano;
 	}
 
 	public void setData(Date data) {
@@ -79,12 +78,6 @@ public class Livro {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	public Livro() {
-		this.data = "27/11/2019";
-	}
-	
-	
 	
 	
 	

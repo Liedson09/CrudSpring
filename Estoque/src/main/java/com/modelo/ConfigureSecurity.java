@@ -1,4 +1,4 @@
-/**package com.modelo;
+package com.modelo;
 
 
 
@@ -48,4 +48,4 @@ public class ConfigureSecurity extends WebSecurityConfigurerAdapter{
 		//.antMatchers("/**").hasAnyRole("USER", "ADMIN");
 		//.antMatchers("/cadastro*	*").hasAnyRole("USER", "ADMIN")
 	}
-}*/
+}

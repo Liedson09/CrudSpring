@@ -57,7 +57,7 @@ public class CadastroController {
 	}
 
 	
-	@PostMapping("/cadastro")
+	@GetMapping("/cadastro")
 	public String salvar(@Valid Livro livro, BindingResult result
 			,RedirectAttributes attributes) {
 		

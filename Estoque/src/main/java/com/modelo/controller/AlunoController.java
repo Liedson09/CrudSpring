@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.modelo.model.Aluno;
-import com.modelo.model.Livro;
 import com.modelo.repository.AlunoRepository;
 
 @Controller
@@ -19,8 +18,8 @@ public class AlunoController {
 	
 
 	@GetMapping("/cadastrarAluno")
-	public String adicionar(Model aluno, Aluno aluno1) {
-		aluno.addAttribute("aluno", aluno1);
+	public String adicionar(Model aluno) {
+		aluno.addAttribute("aluno", alunoRepository.findAll());
 		return "adicionar";
 	}
 		
@@ -31,7 +30,7 @@ public class AlunoController {
 		return "cadastroAluno";
 	}
 	
-	@PostMapping("/cadAluno")
+	@GetMapping("/cadAluno")
 	public String salvar(Aluno aluno) {
 		alunoRepository.save(aluno);
 		return "redirect:/";

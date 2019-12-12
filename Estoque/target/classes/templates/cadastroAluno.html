@@ -103,7 +103,7 @@ a:visited{color:black;}
 
 <body>
 
-		<div id="controller"><h1 align="center">Alunos Cadastrados</h1><h2 class="c"><a href="/formLivro"><button type="button" class="btn btn-outline-success"> Volta </button></a></h2>
+		<div id="controller"><h1 align="center">Alunos Cadastrados</h1><h2 class="c"><a href="/formLivro"><button type="button" class="btn btn-outline-light"> Volta </button></a></h2>
 		<div class="menu">
 	<ul>
 		<li><a href="/index">Home</a></li>
@@ -116,7 +116,7 @@ a:visited{color:black;}
 	</ul>
 	</div>
 		 
-			<div><h3 class="d"><a href="/cadastrarAluno"><button type="button" class="btn btn-outline-success"> CADASTRAR ALUNOS </button></a></h3></div> 
+			<div><h3 class="d"><a href="/cadastrarAluno"><button type="button" class="btn btn-outline-light"> CADASTRAR ALUNOS </button></a></h3></div> 
 			<div class="foto"> <img src="c1.png" width="4%" height="4%"> </div> 
 		</div>
 
@@ -148,6 +148,9 @@ a:visited{color:black;}
   		<td th:text=${a.id}>1</td>
   		<td th:text="${a.nome}"></td>
   		<td th:text="${a.sala}"></td>
+  		<td th:text="${a.livro}"></td>
+  		<td th:text="${a.emprestimo}"></td>
+  		<td th:text="${a.devolucao}"></td>
   		<td>
 	<a class="btn btn-primary" th:href="@{/edit/{id}(id=${a.id})}" >Editar</a>
 	</td>

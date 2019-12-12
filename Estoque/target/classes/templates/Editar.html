@@ -104,21 +104,12 @@
     <b><label>Editora</label>
 	<input type="text" th:field="*{editora}" class="form-control time-mask" placeholder=" Editora do Livro"></b>
     </div><br><br>
-    <div>
-        <b><label>Emprestimo</label>
-	<input type="date" th:field="*{emprestimo}" class="form-control" placeholder=" dd/mm/aaaa" data-mask="00/00/0000" maxlength="8" autocomplete="off"></b>
-    </div><br><br>
-     <div>
-        <b><label>Devolução</label>
-	<input type="date" th:field="*{devolucao}" class="form-control" placeholder=" dd/mm/aaaa" data-mask="00/00/0000" maxlength="8" autocomplete="off"></b>
     
-    </div>
-	</div> <br><br>
 	<div id="buton">
 		<div id="buton"><input type="submit" value="Editar" class="btn btn-outline-success" align="center"></div>
 	</div>
 	</form>
-	<form class="" action="/cadastro" method="post" align="cenetr" th:object="${produto}">
+	
   
   
     
